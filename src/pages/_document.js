@@ -8,7 +8,9 @@ export default class _Document extends Document {
   render() {
     return (
       <Html>
+        <title>Hackfest 2023 - QnA</title>
         <Head />
+
         <body>
           <Main />
           <NextScript />
