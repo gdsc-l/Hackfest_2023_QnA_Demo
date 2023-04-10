@@ -84,6 +84,8 @@ export default function Home() {
     },
   });
 
+  questionsQuery.isFe;
+
   const upvoteQuestionMutation = useMutation(upvoteQuestion, {
     onSuccess: (_data, variables) => {
       queryClient.refetchQueries(['questions']);
@@ -144,6 +146,8 @@ export default function Home() {
               upvotes={obj.upvotes}
               didUpvote={obj.didUpvote}
               onUpvote={() => {
+                // Prevents the user from upvoting multiple times
+                if (upvoteQuestionMutation.isLoading || questionsQuery.isFetching) return;
                 if (obj.didUpvote) {
                   // Already upvoted
                   upvoteQuestionMutation.mutate({
