@@ -9,6 +9,13 @@ export default class _Document extends Document {
     return (
       <Html>
         <title>Hackfest 2023 - QnA</title>
+        <meta property="og:image" content="/og.png" />
+        <meta property="og:title" content="Hackfest 2023 - QnA" />
+        <meta property="og:description" content="Ask questions for the Intro to NextJS Workshop" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Hackfest 2023 - QnA" />
+        <meta name="twitter:card" content="/og.png" />
+
         <Head />
 
         <body>
