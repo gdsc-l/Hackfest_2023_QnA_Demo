@@ -18,9 +18,14 @@ if (process.env.NODE_ENV === 'production') {
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     const questions = await prisma.questions.findMany({
-      orderBy: {
-        createdAt: 'desc',
-      },
+      orderBy: [
+        {
+          upvotes: 'desc',
+        },
+        {
+          createdAt: 'desc',
+        },
+      ],
     });
 
     return res.json(questions);
